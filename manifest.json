@@ -1,0 +1,18 @@
+{
+  "background_page": "background.html",
+  "content_scripts": [ {
+    "js": ["web_technology_notifier.js"],
+    "matches": [ "http://*/*", "https://*/*" ],
+    "run_at": "document_start"
+  } ],
+  "description": "Displays the Web technology of the current page.",
+  "icons": {
+    "128": "web_technology_notifier-128x128.png"
+  },
+  "page_action": {
+    "popup": "popup.html"
+  },
+  "name": "Web Technology Notifier",
+  "permissions": [ "http://*/*", "https://*/*", "tabs" ],
+  "version": "1.0.1"
+}
