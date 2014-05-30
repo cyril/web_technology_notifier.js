@@ -1,10 +1,6 @@
-<html>
-<head>
-<script type="text/javascript" src="chrome-extension://fnpgnmindcbkjbpblcklealdhnogmlko/web_technologies.js"></script>
-<script type="text/javascript">
 var technologyData = {};
 
-chrome.extension.onRequest.addListener(function(banner, sender) {
+chrome.extension.onMessage.addListener(function(banner, sender) {
   technologyData[sender.tab.id] = banner;
 
   var alt = "Unrecognized technology";
@@ -25,6 +21,3 @@ chrome.extension.onRequest.addListener(function(banner, sender) {
 chrome.tabs.onRemoved.addListener(function(tabId) {
   delete technologyData[tabId];
 });
-</script>
-</head>
-</html>
